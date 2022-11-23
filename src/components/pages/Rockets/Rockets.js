@@ -7,6 +7,7 @@ import {
 import PropTypes from 'prop-types';
 import { buttonToggle } from '../../../redux/rockets/rockets';
 import './Rocket.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Rockets = (props) => {
   const dispatch = useDispatch();
