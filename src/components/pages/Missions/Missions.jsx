@@ -5,10 +5,10 @@ import MissionRows from './MissionRows';
 
 const Missions = () => {
   const dispatch = useDispatch();
-  const missions = useSelector((state) => state.missionReducer);
+  const missions = useSelector((state) => state.missionReducer.missions);
 
   useEffect(() => {
-    dispatch(fetchMissions);
+    dispatch(fetchMissions());
   }, [dispatch]);
 
   return (
