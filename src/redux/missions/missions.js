@@ -1,4 +1,4 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 // import axios from 'axios';
 
 // Action
@@ -10,8 +10,8 @@ const API = 'https://api.spacexdata.com/v3/missions';
 // Thunk
 export const fetchMissions = createAsyncThunk(FETCH_MISSIONS, async () => {
   try {
-    const data = await (fetch(API)).then((res) => res.json());
-    // const data = await response.json();
+    const response = await fetch(API);
+    const data = await response.json();
     const missions = data.map((data) => ({
       id: data.mission_id,
       missionName: data.mission_name,
@@ -21,26 +21,25 @@ export const fetchMissions = createAsyncThunk(FETCH_MISSIONS, async () => {
   } catch (error) {
     return error.message;
   }
-
-  // try {
-  //   return await baseURL.fetchMissions();
-  // } catch (error) {
-  //   return error.message;
-  // }
 });
 
-const initialState = [];
-
-// Reducer Function
-const missionReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case FETCH_MISSIONS.fulfilled: {
-      return action.payload;
-    }
-
-    default:
-      return state;
-  }
+const initialState = {
+  missions: [],
 };
 
-export default missionReducer;
+// Reducer Function
+const missionReducer = createSlice({
+  name: 'missions',
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchMissions.fulfilled, (state, action) => ({
+        ...state,
+        missions: action.payload,
+        status: 'success',
+      }));
+  },
+});
+
+export default missionReducer.reducer;
