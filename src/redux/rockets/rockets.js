@@ -2,6 +2,15 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const url = 'https://api.spacexdata.com/v3/rockets';
 
+const initialState = {
+  id: ' ',
+  name: ' ',
+  type: ' ',
+  flickr_images: ' ',
+  description: ' ',
+  reserved: false,
+};
+
 export const fetchRockets = createAsyncThunk(
   'FETCH',
   async () => {
@@ -10,7 +19,7 @@ export const fetchRockets = createAsyncThunk(
       id: rocket.rocket_id,
       name: rocket.rocket_name,
       type: rocket.rocket_type,
-      flickr_images: rocket.flickr_images,
+      flickr_images: rocket.flickr_images[0],
       description: rocket.description,
       reserved: false,
     }));
@@ -20,7 +29,7 @@ export const fetchRockets = createAsyncThunk(
 
 export const buttonToggle = (id) => ({ type: 'BUTTON_PRESSED', payload: id });
 
-const rocketsReducer = (state = [], action) => {
+const rocketsReducer = (state = [initialState], action) => {
   switch (action.type) {
     case 'FETCH/fulfilled': {
       return action.payload;
@@ -33,7 +42,6 @@ const rocketsReducer = (state = [], action) => {
         }
         return rockets;
       });
-      console.log(newState);
       return newState;
     }
 
