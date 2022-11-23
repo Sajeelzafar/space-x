@@ -3,7 +3,6 @@ import Navbars from './Navbar/Navbar';
 import Rockets from './pages/Rockets/Rockets';
 import Missions from './pages/Missions/Missions';
 import Profile from './pages/myprofile/Profile';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
