@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import {
-  Container, Row, Col, Image, Button,
+  Container, Row, Col, Image, Button, Collapse,
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { buttonToggle } from '../../../redux/rockets/rockets';
@@ -18,6 +18,7 @@ const Rockets = (props) => {
           <Col className="eachbox" xs={5}><Image fluid src={element.flickr_images} alt="Flicker Image" /></Col>
           <Col className="eachbox">
             <h1>{element.name}</h1>
+            <Collapse in={element.reserved}><Button variant="info" type="button" size="sm">Reserved</Button></Collapse>
             <p>{element.description}</p>
             {
               (element.reserved)
