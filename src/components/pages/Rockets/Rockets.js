@@ -21,7 +21,11 @@ const Rockets = (props) => {
           <Col className="eachbox">
             <h1>{element.name}</h1>
             <p>{element.description}</p>
-            <Button id={element.id} variant="primary" type="button" onClick={(e) => dispatch(buttonToggle(e.target.id))}>Reserve Rocket</Button>
+            {
+              (element.reserved)
+                ? <Button id={element.id} variant="light" className="cancelButton" type="button" onClick={(e) => dispatch(buttonToggle(e.target.id))}>Cancel Reservation</Button>
+                : <Button id={element.id} variant="primary" type="button" onClick={(e) => dispatch(buttonToggle(e.target.id))}>Reserve Rocket</Button>
+            }
           </Col>
         </Row>
       ))}
