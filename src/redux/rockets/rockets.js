@@ -12,6 +12,7 @@ export const fetchRockets = createAsyncThunk(
       type: rocket.rocket_type,
       flickr_images: rocket.flickr_images,
       description: rocket.description,
+      reserved: false,
     }));
     return response;
   },
@@ -26,7 +27,14 @@ const rocketsReducer = (state = [], action) => {
     }
 
     case 'BUTTON_PRESSED': {
-      return state;
+      const newState = state.map((rockets) => {
+        if (rockets.id === action.payload) {
+          return { ...rockets, reserved: !rockets.reserved };
+        }
+        return rockets;
+      });
+      console.log(newState);
+      return newState;
     }
 
     default:
