@@ -17,10 +17,16 @@ export const fetchRockets = createAsyncThunk(
   },
 );
 
+export const buttonToggle = (id) => ({ type: 'BUTTON_PRESSED', payload: id });
+
 const rocketsReducer = (state = [], action) => {
   switch (action.type) {
     case 'FETCH/fulfilled': {
       return action.payload;
+    }
+
+    case 'BUTTON_PRESSED': {
+      return state;
     }
 
     default:

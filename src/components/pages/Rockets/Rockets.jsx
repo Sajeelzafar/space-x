@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import {
   Container, Row, Col, Image, Button,
 } from 'react-bootstrap';
-import { fetchRockets } from '../../../redux/rockets/rockets';
+import { buttonToggle, fetchRockets } from '../../../redux/rockets/rockets';
 import './Rocket.css';
 
 const Rockets = () => {
@@ -28,7 +28,7 @@ const Rockets = () => {
           <Col className="eachbox">
             <h1>{element.name}</h1>
             <p>{element.description}</p>
-            <Button variant="primary" type="button">Reserve Rocket</Button>
+            <Button id={element.id} variant="primary" type="button" onClick={(e) => dispatch(buttonToggle(e.target.id))}>Reserve Rocket</Button>
           </Col>
         </Row>
       ))}
