@@ -1,17 +1,16 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import {
   Container, Row, Col, Image, Button, Collapse,
 } from 'react-bootstrap';
-import PropTypes from 'prop-types';
 import { buttonToggle } from '../../../redux/rockets/rockets';
 import './Rocket.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Rockets = (props) => {
+const Rockets = () => {
   const dispatch = useDispatch();
-  const { rockets } = props;
+  const rockets = useSelector((state) => state.rocketsReducer);
   return (
     <Container fluid className="container">
       {rockets.map((element) => (
@@ -31,17 +30,6 @@ const Rockets = (props) => {
       ))}
     </Container>
   );
-};
-
-Rockets.propTypes = {
-  rockets: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    flickr_images: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    reserved: PropTypes.bool.isRequired,
-  })).isRequired,
 };
 
 export default Rockets;

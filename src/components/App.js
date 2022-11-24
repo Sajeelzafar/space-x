@@ -28,7 +28,7 @@ function App() {
     <Router>
       <Navbars />
       <Routes>
-        <Route path="/" element={<Rockets rockets={rockets} />} />
+        <Route path="/" element={<Rockets />} />
         <Route path="/missions" element={<Missions />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
