@@ -73,9 +73,9 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
+> Link to deployed project is:
 
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+- [Live Demo Link](https://space-x1234.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
