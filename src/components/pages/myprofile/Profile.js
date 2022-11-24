@@ -13,10 +13,10 @@ const Profile = () => {
   return (
     <Container fluid>
       <Row className="rocketbox">
-        <Col>
+        <Col className="heading">
           <h2>My Missions</h2>
         </Col>
-        <Col>
+        <Col className="heading">
           <h2>My Rockets</h2>
         </Col>
       </Row>
@@ -30,6 +30,10 @@ const Profile = () => {
           </Col>
         </Row>
       ))}
+      <Row className="rocketbox">
+        <Col className="last" />
+        <Col className="last" />
+      </Row>
     </Container>
   );
 };

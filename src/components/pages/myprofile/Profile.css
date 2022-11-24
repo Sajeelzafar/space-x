@@ -2,6 +2,10 @@
     margin: 0 4% 0 4%;
 }
 
+.heading {
+    padding: 1%;
+}
+
 .rocketColumnBox {
     padding: 2%;
     margin-right: 3%;
@@ -9,6 +13,8 @@
     border-bottom: none;
 }
 
-.rocketbox .rocketColumnBox:last-child {
-    border: 2px solid silver;
+.last {
+    padding: 2%;
+    margin-right: 3%;
+    border-top: 2px solid silver;
 }
