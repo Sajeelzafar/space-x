@@ -1,0 +1,13 @@
+.rocketbox {
+  margin: 0 4% 0 4%;
+}
+
+.heading {
+  padding: 1%;
+}
+
+.rocketColumnBox {
+  padding: 2%;
+  margin-right: 3%;
+  border: 2px solid silver;
+}
