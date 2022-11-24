@@ -10,11 +10,4 @@
   padding: 2%;
   margin-right: 3%;
   border: 2px solid silver;
-  border-bottom: none;
-}
-
-.last {
-  padding: 2%;
-  margin-right: 3%;
-  border-top: 2px solid silver;
 }

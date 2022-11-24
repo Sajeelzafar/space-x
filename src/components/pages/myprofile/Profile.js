@@ -10,29 +10,27 @@ import './Profile.css';
 const Profile = () => {
   const rockets = useSelector((state) => state.rocketsReducer);
   const reservedRockets = rockets.filter((rocket) => rocket.reserved);
+
   return (
     <Container fluid>
       <Row className="rocketbox">
         <Col className="heading">
           <h2>My Missions</h2>
+          {reservedRockets.map((element) => (
+            <Row key={uuidv4()} className="rocketColumnBox">
+              {element.name}
+            </Row>
+          ))}
         </Col>
+
         <Col className="heading">
           <h2>My Rockets</h2>
+          {reservedRockets.map((element) => (
+            <Row key={uuidv4()} className="rocketColumnBox">
+              {element.name}
+            </Row>
+          ))}
         </Col>
-      </Row>
-      {reservedRockets.map((element) => (
-        <Row className="rocketbox" key={uuidv4()}>
-          <Col className="rocketColumnBox">
-            {element.name}
-          </Col>
-          <Col className="rocketColumnBox">
-            {element.name}
-          </Col>
-        </Row>
-      ))}
-      <Row className="rocketbox">
-        <Col className="last" />
-        <Col className="last" />
       </Row>
     </Container>
   );
