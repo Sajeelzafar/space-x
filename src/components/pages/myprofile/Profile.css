@@ -1,20 +1,20 @@
 .rocketbox {
-    margin: 0 4% 0 4%;
+  margin: 0 4% 0 4%;
 }
 
 .heading {
-    padding: 1%;
+  padding: 1%;
 }
 
 .rocketColumnBox {
-    padding: 2%;
-    margin-right: 3%;
-    border: 2px solid silver;
-    border-bottom: none;
+  padding: 2%;
+  margin-right: 3%;
+  border: 2px solid silver;
+  border-bottom: none;
 }
 
 .last {
-    padding: 2%;
-    margin-right: 3%;
-    border-top: 2px solid silver;
+  padding: 2%;
+  margin-right: 3%;
+  border-top: 2px solid silver;
 }
