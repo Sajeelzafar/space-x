@@ -8,6 +8,9 @@ import {
 import './Profile.css';
 
 const Profile = () => {
+  const missions = useSelector((state) => state.missionReducer.missions);
+  const joinedMission = missions.filter((data) => data.joinedMission);
+
   const rockets = useSelector((state) => state.rocketsReducer);
   const reservedRockets = rockets.filter((rocket) => rocket.reserved);
 
@@ -16,9 +19,9 @@ const Profile = () => {
       <Row className="rocketbox">
         <Col className="heading">
           <h2>My Missions</h2>
-          {reservedRockets.map((element) => (
+          {joinedMission.map((element) => (
             <Row key={uuidv4()} className="rocketColumnBox">
-              {element.name}
+              {element.missionName}
             </Row>
           ))}
         </Col>
