@@ -44,9 +44,9 @@
   <summary>Client</summary>
   <ul>
     <li><a href="https://reactjs.org/">React.js</a></li>
-    <li><a href="react-bootstrap.github.io/">React Bootstrap</a></li>
-    <li><a href="jsx.github.io/">JSX</a></li>
-    <li><a href="www.w3.org/Style/CSS/Overview.en.html">CSS</a></li>
+    <li><a href="https://react-bootstrap.github.io/">React Bootstrap</a></li>
+    <li><a href="https://jsx.github.io/">JSX</a></li>
+    <li><a href="https://www.w3.org/Style/CSS/Overview.en.html">CSS</a></li>
   </ul>
 </details>
 
@@ -55,7 +55,7 @@
   <ul>
     <li><a href="https://nodejs.org/en/">Node.js</a></li>
     <li><a href="https://babeljs.io/">Babel</a></li>
-    <li><a href="https://jestjs.io//">Jest</a></li>
+    <li><a href="https://jestjs.io/">Jest</a></li>
   </ul>
 </details>
 
