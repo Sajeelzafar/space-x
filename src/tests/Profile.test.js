@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import store from '../Redux/configureStore';
+import store from '../redux/configureStore';
 import Profiles from '../components/pages/myprofile/Profile';
 
 describe('Test for the profile page', () => {
