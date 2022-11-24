@@ -1,0 +1,14 @@
+.rocketbox {
+    margin: 0 4% 0 4%;
+}
+
+.rocketColumnBox {
+    padding: 2%;
+    margin-right: 3%;
+    border: 2px solid silver;
+    border-bottom: none;
+}
+
+.rocketbox .rocketColumnBox:last-child {
+    border: 2px solid silver;
+}
