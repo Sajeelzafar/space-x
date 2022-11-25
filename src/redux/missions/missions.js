@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-// import axios from 'axios';
 
 // Action
 const FETCH_MISSIONS = 'FETCH_MISSIONS';
