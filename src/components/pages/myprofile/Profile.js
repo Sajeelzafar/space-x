@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 import {
   Container, Row, Col,
 } from 'react-bootstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import './Profile.css';
 
 const Profile = () => {
