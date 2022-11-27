@@ -29,25 +29,33 @@ export const fetchRockets = createAsyncThunk(
 
 export const buttonToggle = (id) => ({ type: 'BUTTON_PRESSED', payload: id });
 
-const rocketsReducer = (state = [initialState], action) => {
-  switch (action.type) {
-    case 'FETCH/fulfilled': {
-      return action.payload;
-    }
-
-    case 'BUTTON_PRESSED': {
-      const newState = state.map((rockets) => {
-        if (rockets.id === action.payload) {
-          return { ...rockets, reserved: !rockets.reserved };
-        }
-        return rockets;
-      });
-      return newState;
-    }
-
-    default:
-      return state;
+const rocketsReducer = createSlice({
+  name: "rockets",
+  initialState,
+  reducers: {
+    
   }
-};
+})
+
+// const rocketsReducer = (state = [initialState], action) => {
+//   switch (action.type) {
+//     case 'FETCH/fulfilled': {
+//       return action.payload;
+//     }
+
+//     case 'BUTTON_PRESSED': {
+//       const newState = state.map((rockets) => {
+//         if (rockets.id === action.payload) {
+//           return { ...rockets, reserved: !rockets.reserved };
+//         }
+//         return rockets;
+//       });
+//       return newState;
+//     }
+
+//     default:
+//       return state;
+//   }
+// };
 
 export default rocketsReducer;
